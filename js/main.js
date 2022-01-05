@@ -22,8 +22,8 @@ const listStudents = [
     },
     {
         studentPhoto: 'https://lms.ithillel.ua/uploads/images/7e0475ff04937622a8aa27a8d38be520.jpg',
-        studentName: 'Odintsov',
-        studentSurname: 'Oleksandr',
+        studentName: 'Oleksandr',
+        studentSurname: 'Odintsov',
         doneDz: '7',
         score: '680'
     },
@@ -33,10 +33,53 @@ const listStudents = [
         studentSurname: 'David',
         doneDz: '7',
         score: '675'
+    },
+    {
+        studentPhoto: 'https://lms.ithillel.ua/uploads/images/5d6a97aefe779d59786a11f9063d1ff0.jpg',
+        studentName: 'Oleksandr',
+        studentSurname: 'Yaremenko',
+        doneDz: '7',
+        score: '657'
+    },
+    {
+        studentPhoto: 'https://lms.ithillel.ua/uploads/images/b86e405b95a95b5011f856ad81f4c6a5.jpg',
+        studentName: 'Антон',
+        studentSurname: 'Сквирский',
+        doneDz: '7',
+        score: '648'
     }
 ];
 
-listStudents.forEach(function (element) {    
+/***** full list without filter *****/ 
+
+// listStudents.forEach(function (element) {
+//     document.getElementById('students').insertAdjacentHTML(
+//         "beforeend",
+//         `
+//         <tr>
+//         <td><img src="${element.studentPhoto}"></img></td>
+//         <td>
+//         <div>${element.studentName}</div>
+//         <div>${element.studentSurname}</div>
+//         </td>
+//         <td>
+//         <div>${element.doneDz}</div>
+//         <div>${element.score}</div>
+//         </td>
+//         </tr>
+//         `
+//     );
+// });
+
+/***** filtered with score >= 680 *****/
+
+// let filtered = listStudents.filter(function (a) { 
+//     return a.score >= 680;
+// });
+
+let filtered = listStudents.filter(a => a.score >= 680);
+
+filtered.forEach(function (element) {    
     document.getElementById('students').insertAdjacentHTML(
         "beforeend",
         `     
@@ -52,5 +95,5 @@ listStudents.forEach(function (element) {
         </td>
         </tr>              
         `
-    );
+    );   
 });
